@@ -1,0 +1,162 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+html {
+    overflow-x: hidden;
+    background: rgb(5,232,175);
+    background: linear-gradient(90deg, rgba(5,232,175,1) 0%, rgba(102,21,251,1) 47%, rgba(0,212,255,1) 100%);
+}
+
+.mainList {
+    width: 100%;
+    height: 90vh;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;   
+}
+
+.trackInfoInput {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin: 5px 50px;
+}
+
+input:focus {
+    border: 2px solid rgb(0, 101, 148);
+}
+
+input {
+    outline:none;
+    padding: 5px;
+}
+
+.filler {
+    width: 10%;
+}
+
+.show {
+    width: 50%;
+    height: 80vh;
+    margin: 0 auto;
+    margin-right: 5px;
+}
+
+.btnStyle {
+    border-radius: 5%;
+    width: 20%;
+    margin-top: 5px;
+    padding: 5px;
+    background: none;
+    color: white;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: all 0.3s;
+    border: 2px solid white;
+    font-weight: 700;
+}
+
+.btnStyle:hover,input[type="submit"]:focus {
+    background: white;
+    color: #1dacff;
+}
+
+.tableDiv {
+    width: 100%;
+    position: absolute;
+    left: 2000px; 
+    max-height: 80vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    display: none;
+}
+
+.tableDiv.showTable {
+   left: initial;
+   position: relative;
+   animation: slideFromRight 0.2s ease-in-out;
+   overflow-y: visible;
+   border-radius: 1%;
+   display: flex;
+}
+
+.trackListTable {
+    width: 100%;
+    border: 2px solid white;
+    margin-top: 5px;
+    color: white;
+    background: rgba(255, 255, 255, 0.39);
+    border-radius: 1%;
+    padding: 5px;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+th, td {
+    padding: 5px; 
+} 
+
+td{
+    height: 50px;  
+    word-wrap:break-word
+}
+
+tr {
+    border-bottom: 1px solid white;
+}
+
+
+@keyframes slideFromRight {
+    0% {
+        left: 400px;
+    }
+    20%{
+        left: 300px;
+    }
+    30% {
+        left: 200px;
+    }
+    50% {
+        left: 150px;
+    }
+    70% {
+        left: 100px;
+    }
+    90% {
+        left: 50px;
+    } 
+    100% {
+      left: initial;
+    }
+}
+
+@keyframes slideFromLeft {
+    0% {
+        left: 15px
+    }
+    20%{
+        left: 30px;
+    }
+    30% {
+        left: 50px;
+    }
+    50% {
+        left: 100px;
+    }
+    70% {
+        left: 200px;
+    }
+    80% {
+        left: 300px;
+    }
+    90% {
+        left: 400px;
+    }
+    100% {
+        left: 2000px;
+    }
+}

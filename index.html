@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="icon" type="image/gif/png" href="assets/headphones.png">
+    <title>Tracklist</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/index.css">
+</head>
+
+<body>
+    <div class="mainList">
+        <form class="trackInfoInput" autocomplete="off"> 
+            Track title:
+            <input name="trackTitle" type="text" placeholder="Track title" required>
+            Artist:
+            <input name="artist" type="text" placeholder="Artist" required>
+            BPM of the track:
+            <input name="bpm" type="text" placeholder="BPM" required>
+            Track's key:
+            <input name="key" type="text" placeholder="Key">
+            <button type="submit" class="btnStyle">Submit</button>
+        </form>
+
+        <div class="filler"></div>
+
+        <div class="show">
+            <button class="showList btnStyle">Show list</button>
+            <div class="tableDiv">
+                <table class="trackListTable">
+                    <thead>
+                        <tr>
+                            <th align="left">Title</th>
+                            <th align="left">Artist</th>
+                            <th align="left">BPM</th>
+                            <th align="left">Key</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/index.js"></script>
+</body>
+
+</html>
