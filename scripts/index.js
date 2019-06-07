@@ -9,6 +9,13 @@ let trackListForm = document.querySelector(".trackInfoInput");
 
 let tracksArr = [];
 
+
+if (localStorage.length > 0) {
+    var tracksItems = localStorage.getItem("tracks");
+    var tracksItemsArr = JSON.parse(tracksItems);
+    tracksArr = tracksItemsArr;
+}
+
 let generateList = track => {
     let tableRow = document.createElement("tr");
     let tableCellTitle = document.createElement("td");
@@ -16,7 +23,6 @@ let generateList = track => {
     let tableCellBPM = document.createElement("td");
     let tableCellKey = document.createElement("td");
     let deleteIcon = document.createElement("td");
- 
 
     tableCellTitle.innerText = track.trackTitle;
     tableCellArtist.innerText = track.artist;
@@ -31,12 +37,12 @@ let generateList = track => {
     tableRow.appendChild(tableCellKey);
     tableRow.appendChild(deleteIcon);
 
-
     deleteIcon.addEventListener("click", (event) => {
         tableRow.style.opacity = "0";
         setTimeout(() => {
             trackListTable.removeChild(tableRow);
             tracksArr.splice(tracksArr.indexOf(track), 1);
+            localStorage.setItem('tracks', JSON.stringify(tracksArr));
         }, 700);
         event.stopPropagation();
     });
@@ -52,11 +58,12 @@ trackListForm.addEventListener("submit", (event) => {
         key: keyInput.value
     }
     tracksArr.push(trackInfo);
+    localStorage.setItem('tracks', JSON.stringify(tracksArr));
 
     if (tableDiv.classList.contains("showTable")) {
         generateList(tracksArr[tracksArr.length - 1]);
     }
-})
+});
 
 showListBtn.addEventListener("click", () => {
     tableDiv.classList.toggle("showTable");
@@ -73,4 +80,4 @@ showListBtn.addEventListener("click", () => {
             trackListTable.removeChild(trackListTable.lastElementChild);
         }
     }
-})
+});

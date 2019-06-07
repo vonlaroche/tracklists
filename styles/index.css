@@ -166,3 +166,28 @@ i:hover {
         left: 2000px;
     }
 }
+
+
+@media all and (max-width: 770px) {
+    .mainList {
+        flex-direction: column;   
+    }
+   
+    .trackInfoInput{
+        width: 90%;
+        margin: 0 5px;
+    }
+
+    .btnStyle{
+        width: 40%;
+    }
+    .tableDiv {
+        margin:0;
+    }
+     
+    .show {
+        width: 95%;
+        margin:0 5px;
+        padding:0;
+    }
+}
