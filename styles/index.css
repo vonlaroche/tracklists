@@ -107,6 +107,12 @@ td{
 
 tr {
     border-bottom: 1px solid white;
+    opacity: 1;
+    transition: opacity 700ms linear;
+}
+
+i:hover {
+    color: #bd0000;
 }
 
 

@@ -9,23 +9,37 @@ let trackListForm = document.querySelector(".trackInfoInput");
 
 let tracksArr = [];
 
-let generateList = (track) => {
+let generateList = track => {
     let tableRow = document.createElement("tr");
     let tableCellTitle = document.createElement("td");
     let tableCellArtist = document.createElement("td");
     let tableCellBPM = document.createElement("td");
     let tableCellKey = document.createElement("td");
+    let deleteIcon = document.createElement("td");
+ 
 
     tableCellTitle.innerText = track.trackTitle;
     tableCellArtist.innerText = track.artist;
     tableCellBPM.innerText = track.bpm;
     tableCellKey.innerText = track.key;
+    deleteIcon.innerHTML = "<i class=\"fas fa-trash-alt\"></i>";
 
     trackListTable.appendChild(tableRow);
     tableRow.appendChild(tableCellTitle);
     tableRow.appendChild(tableCellArtist);
     tableRow.appendChild(tableCellBPM);
     tableRow.appendChild(tableCellKey);
+    tableRow.appendChild(deleteIcon);
+
+
+    deleteIcon.addEventListener("click", (event) => {
+        tableRow.style.opacity = "0";
+        setTimeout(() => {
+            trackListTable.removeChild(tableRow);
+            tracksArr.splice(tracksArr.indexOf(track), 1);
+        }, 700);
+        event.stopPropagation();
+    });
 }
 
 
