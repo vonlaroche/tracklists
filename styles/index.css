@@ -22,7 +22,7 @@ html {
 .trackInfoInput {
     display: flex;
     flex-direction: column;
-    width: 40%;
+    width: 30%;
     margin: 5px 50px;
 }
 
@@ -40,7 +40,7 @@ input {
 }
 
 .show {
-    width: 50%;
+    width: 70%;
     height: 80vh;
     margin: 0 auto;
     margin-right: 5px;
@@ -96,13 +96,22 @@ input {
     table-layout: fixed;
 }
 
+.trackListTable th:first-child {
+    width: 40%;
+}
+.trackListTable th:nth-child(2){
+    width: 30%;
+}
+
 th, td {
     padding: 5px; 
 } 
 
 td{
-    height: 50px;  
-    word-wrap:break-word
+    /* height: 50px; */
+    /* word-wrap:break-word; */
+    overflow:hidden;
+    text-overflow: ellipsis;
 }
 
 tr {
