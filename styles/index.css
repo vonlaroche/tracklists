@@ -35,6 +35,20 @@ input {
     padding: 5px;
 }
 
+.trackAddedSpan {
+    margin: 5px 0px;
+    color: #bd0000;
+    font-size: 0.9em;
+    font-weight: 700;
+    border: 1px solid #bd0000;
+    border-radius: 5%;
+    width: 30%;
+    background: white;
+    padding: 2px;
+    opacity: 0;
+    transition: all 200ms linear;
+}
+
 .filler {
     width: 10%;
 }
@@ -107,7 +121,7 @@ th, td {
     padding: 5px; 
 } 
 
-td{
+td {
     /* height: 50px; */
     /* word-wrap:break-word; */
     overflow:hidden;
@@ -181,22 +195,39 @@ i:hover {
     .mainList {
         flex-direction: column;   
     }
-   
     .trackInfoInput{
         width: 90%;
         margin: 0 5px;
     }
-
     .btnStyle{
         width: 40%;
     }
     .tableDiv {
         margin:0;
     }
-     
     .show {
         width: 95%;
         margin:0 5px;
         padding:0;
+    }
+}
+
+@media all and (max-width: 1024px){
+  .btnStyle{
+      width: 30%;
+  }
+}
+
+
+@media all and (min-width: 2560px){
+    .trackInfoInput{
+        width: 20%;
+    }
+    .filler {
+        width: 10%;
+    }
+    .show {
+        width: 50%;
+        margin-left: 20px;
     }
 }

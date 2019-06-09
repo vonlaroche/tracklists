@@ -6,6 +6,7 @@ let tableDiv = document.querySelector(".tableDiv");
 let showListBtn = document.querySelector(".showList");
 let trackListTable = document.querySelector(".trackListTable");
 let trackListForm = document.querySelector(".trackInfoInput");
+let trackAddedSpan = document.querySelector(".trackAddedSpan");
 
 let tracksArr = [];
 
@@ -59,6 +60,12 @@ trackListForm.addEventListener("submit", (event) => {
     }
     tracksArr.push(trackInfo);
     localStorage.setItem('tracks', JSON.stringify(tracksArr));
+
+    trackAddedSpan.style.opacity = "1";
+
+    setTimeout(() => {
+        trackAddedSpan.style.opacity = "0";
+    }, 2000);
 
     if (tableDiv.classList.contains("showTable")) {
         generateList(tracksArr[tracksArr.length - 1]);
