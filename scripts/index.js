@@ -10,6 +10,14 @@ let trackAddedSpan = document.querySelector(".trackAddedSpan");
 
 let tracksArr = [];
 
+let propsSortable = {
+    draggable: ".sort",
+    handle: ".sort",
+    group: "sorting",
+    sort: true,
+    ghostClass: "sortable-ghost"
+};
+
 
 if (localStorage.length > 0) {
     var tracksItems = localStorage.getItem("tracks");
@@ -31,6 +39,9 @@ let generateList = track => {
     tableCellKey.innerText = track.key;
     deleteIcon.innerHTML = "<i class=\"fas fa-trash-alt\"></i>";
 
+    tableRow.classList.add("sort");
+
+    new Sortable(trackListTable, propsSortable);
     trackListTable.appendChild(tableRow);
     tableRow.appendChild(tableCellTitle);
     tableRow.appendChild(tableCellArtist);
